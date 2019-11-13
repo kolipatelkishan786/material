@@ -1,0 +1,143 @@
+<form>
+  <mat-form-field class="form-field">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name">
+    <mat-hint>Only allowed alphabet</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Zip Code</mat-label>
+    <input matInput placeholder="Zip Code" maxlength="6" #zipcode>
+    <mat-hint align="end">{{zipcode.value.length}}/6</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <textarea matInput placeholder="Message" maxlength="100" #message></textarea>
+    <mat-hint align="start">Leave Your Message</mat-hint>
+    <mat-hint align="end">{{message.value.length}}/100</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <input matInput placeholder="Email" [formControl]="emailFormControl">
+    <mat-error *ngIf="emailFormControl.hasError('required')">Email is Required</mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a Valid Email Id</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select City</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h2>My City is: {{selected}}</h2>
+
+  <button mat-button>Submit</button>
+  <button mat-button color="primary">Submit</button>&nbsp;
+  <button mat-raised-button color="accent">Submit</button>&nbsp;
+  <button mat-stroked-button color="primary" disabled>Submit</button>&nbsp;
+  <button mat-fab color="warn">Submit</button>&nbsp;
+  <button mat-mini-fab color="accent">+</button>&nbsp;
+  <a href="javascript:" mat-raised-button color="accent">Click Me..</a>
+
+  <h2>Toggle Button</h2>
+  <mat-button-toggle-group name="txtFormat" [(ngModel)]="selectedButton">
+    <mat-button-toggle value="bold">Bold</mat-button-toggle>
+    <mat-button-toggle value="italic">Italic</mat-button-toggle>
+    <mat-button-toggle value="underline">Underline</mat-button-toggle>
+  </mat-button-toggle-group>
+  <p [style.fontWeight]="selectedButton">This is {{selectedButton}} Paragraph.</p>
+  <p [style.fontStyle]="selectedButton">This is {{selectedButton}} Paragraph.</p>
+  <p [style.textDecoration]="selectedButton">This is {{selectedButton}} Paragraph.</p>
+
+
+  <h2>Slider and Slide Toggle</h2>
+
+  <mat-slider min="1" max="50" step="3" value="20" thumbLabel tickInterval="5" color="primary"
+              (change)="onChange($event)"></mat-slider>
+  <br>
+  <mat-slide-toggle name="isActive" (change)="onChange($event)">Is Active</mat-slide-toggle>
+
+  <h2>Icons</h2>
+
+  <p>
+    <mat-icon color="primary">home</mat-icon>
+  </p>
+  <p>
+    <mat-icon color="accent">favorite</mat-icon>
+  </p>
+
+  <h2>Progressbar</h2>
+  <p>
+    <mat-progress-bar mode="determinate" value="30" color="warn"></mat-progress-bar>
+    <br>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <br>
+    <mat-progress-bar mode="buffer" value="40" bufferValue="80"></mat-progress-bar>
+    <br>
+    <mat-progress-bar mode="query" value="40" bufferValue="80"></mat-progress-bar>
+    <br>
+  </p>
+
+  <h2>Card</h2>
+  <mat-card class="mcard">
+    <mat-card-header>
+      <img mat-card-avatar src="assets/images/mickey.jpg" alt="">
+      <mat-card-title>E-commerce</mat-card-title>
+      <mat-card-subtitle>Magento 2</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/1.jpg" alt="">
+    <mat-card-content>
+      <p>Wel come </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-icon-button color="accent">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <h2>Grid list</h2>
+
+  <mat-grid-list cols="4" rowHeight="3:2" gutterSize="10px">
+    <mat-grid-tile style="background: yellow" colspan="3">1</mat-grid-tile>
+    <mat-grid-tile style="background: red" rowspan="2">
+      <mat-grid-tile-header>Header</mat-grid-tile-header>
+      2
+      <mat-grid-tile-footer>Footer</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile style="background: green" colspan="2">3</mat-grid-tile>
+    <mat-grid-tile style="background: skyblue">4</mat-grid-tile>
+    <mat-grid-tile style="background: purple" colspan="4">5</mat-grid-tile>
+    <mat-grid-tile style="background: gray" colspan="2">6</mat-grid-tile>
+    <mat-grid-tile style="background: orange" colspan="2">4</mat-grid-tile>
+  </mat-grid-list>
+
+
+  <h2>Tabs</h2>
+  <mat-tab-group animationDuration="200ms" selectedIndex="1" [backgroundColor]="bgColor" [color]="color">
+    <mat-tab label="Profile">
+      <h2>Profile</h2>
+      <p>This is a paragraph</p>
+    </mat-tab>
+    <mat-tab label="About">
+      <h2>About</h2>
+      <p>This is a paragraph</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>settings</mat-icon>Settings
+      </ng-template>
+      <h2>Settings</h2>
+      <p>This is a paragraph</p>
+    </mat-tab>
+    <mat-tab label="Lazy Loading">
+      <ng-template matTabContent>
+        <h2>Complex Content</h2>
+        <p>This is a paragraph</p>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</form>

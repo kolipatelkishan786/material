@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.form-field {
+  margin-bottom: 10px;
+  width: 400px;
+  display: block !important;
+}
+
+mat-slider {
+  width: 400px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+mat-sidenav {
+  width: 280px;
+  padding: 15px;
+}
+
+.mat-drawer {
+  background-color: #023075;
+  color: #fff;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.mcard {
+  max-width: 320px;
+}

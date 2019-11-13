@@ -1,0 +1,27 @@
+<button mat-button [mat-menu-trigger-for]="menu">My Account</button>
+<mat-menu #menu='matMenu'>
+  <button mat-menu-item [mat-menu-trigger-for]="secondLevel">
+    <mat-icon>account_box</mat-icon>
+    Profile
+  </button>
+  <button mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    Settings
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>
+    Logout
+  </button>
+</mat-menu>
+
+<mat-menu #secondLevel="matMenu">
+  <button mat-menu-item>Level 2.1</button>
+  <button mat-menu-item [mat-menu-trigger-for]="thirdLevel">Level 2.2</button>
+  <button mat-menu-item>Level 2.3</button>
+</mat-menu>
+<mat-menu #thirdLevel="matMenu" yPosition="below">
+  <button mat-menu-item>Level 3.1</button>
+  <button mat-menu-item>Level 3.2</button>
+  <button mat-menu-item>Level 3.3</button>
+</mat-menu>

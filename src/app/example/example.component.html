@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-checkbox
+    name="city"
+    value="Ahmedabad"
+    [(ngModel)]="checked"
+    (change)="onChange($event)">Ahmedabad.
+  </mat-checkbox>
+  <br>
+  <button mat-raised-button color="primary" *ngIf="checked">Click me!</button>
+
+  <mat-radio-group
+    name="city"
+    value="mycity"
+    [(ngModel)]="mycity"
+    (change)="onChange($event)">
+    <mat-radio-button value="ahmedabad">Ahmedabad</mat-radio-button>&nbsp;
+    <mat-radio-button value="surat" color="primary">Surat</mat-radio-button>
+  </mat-radio-group>
+  <h2>My City is: {{mycity}}</h2>
+  <app-form></app-form>
+</div>
