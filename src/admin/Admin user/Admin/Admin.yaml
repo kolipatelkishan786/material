@@ -1,0 +1,15 @@
+_id: 6311994148856c1bf2e6960f
+apiPath: admin
+email: admin@admin.com
+gitBranchLastPulledItems: []
+name: Admin
+settings:
+  dashboard:
+    admin:
+      showAllInstances: false
+  sandbox:
+    dependencies:
+      nodeJS: []
+    sandboxCountOverrideAdmin: 1
+  showTooltips: true
+userType: ADMIN
