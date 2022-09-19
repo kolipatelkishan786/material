@@ -1,6 +1,24 @@
 _id: 6311994148856c1bf2e6960f
 apiPath: admin
 email: admin@admin.com
+gitBranchLastPulledItems:
+  - ADMIN_USER
+  - API_USERS
+  - CUSTOM_APIS
+  - DB_MIGRATIONS
+  - EVENTS
+  - EVENTS_WS
+  - GROUPS
+  - I18NS
+  - INSTANCES
+  - INSTANCE_API_SETTINGS
+  - LOG_PROFILES
+  - SCHEDULERS
+  - SCHEMAS
+  - SYSTEM_API_SETTINGS
+  - THIRD_PARTY_APIS
+  - THIRD_PARTY_API_SETTINGS
+  - UTILITY_CLASSES
 name: Admin
 settings:
   dashboard:
