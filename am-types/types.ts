@@ -854,6 +854,16 @@ export interface IAPIResponseMeta {
     executionPlan?: any[]; // IMongodbExplainPlan[];
     apiAccessGroups?: IAPIAccessGroupMeta[];
     apiAccessDeep?: IResponseError[];
+    runBy?: ICodeRunByResponse[];
+}
+
+export interface ICodeRunByResponse {
+    apiCategory: any; // EAPICategory enum value.
+    serverId: string;
+    processId: string;
+    workerId: string;
+    port: number;
+    publishToRedis?: boolean; // true = if request received by redis.
 }
 
 export interface IAPIAccessGroupMeta {
@@ -955,3 +965,16 @@ export interface IWSCondition {
 export enum EWSConditionType {
     RESPONSE = 'RESPONSE',
 }
+
+export interface ITestCaseSuccess {
+    testCasePass: true;
+}
+
+export interface ITestCaseFail {
+    testCasePass: false;
+    message: string;
+    actual: any; // variable value.
+    expected: any; // variable value should be this expected value.
+}
+
+export type ITestCaseResult = ITestCaseSuccess | ITestCaseFail; // _id is test case _id.
